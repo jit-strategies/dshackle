@@ -21,7 +21,7 @@ jobs:
       - name: Upload to Docker
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: jib -Pdocker=drpcorg
+          arguments: jib -Pdocker=jitstrategies/dshackle
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
