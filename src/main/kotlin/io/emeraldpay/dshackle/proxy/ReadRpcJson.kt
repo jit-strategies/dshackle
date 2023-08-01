@@ -49,7 +49,7 @@ open class ReadRpcJson : Function<ByteArray, ProxyCall> {
                 throw RpcException(RpcResponseError.CODE_INVALID_REQUEST, "ID is not set")
             }
             val id = json["id"]
-            if ("2.0" != json["jsonrpc"]) {
+            if ("2.0" != json["jsonrpc"] || "1.0" != json["jsonrpc"]) {
                 if (json["jsonrpc"] == null) {
                     throw RpcException(
                         RpcResponseError.CODE_INVALID_REQUEST,
